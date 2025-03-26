@@ -1,0 +1,468 @@
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype-variations");
+  font-weight: 400 500 700 800;
+  font-style: normal;
+}
+@media (max-width: 480px) {
+  .overlay-text h1 {
+    font-size: 1.5rem; 
+  }
+
+  .overlay-text p {
+    font-size: 0.875rem; 
+  }
+
+  .form-container {
+    padding: 1rem; 
+  }
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Gray: hsl(245, 15%, 58%);
+  --Navy: hsl(248, 70%, 10%);
+  --Orange: hsl(7, 88%, 67%);
+}
+
+body {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./assets/images/background-desktop.png");
+  background-size: cover, cover;
+  background-position: center, center;
+  font-family: "Inconsolata", monospace;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0 1rem;
+  display: flexbox;
+  background-repeat: no-repeat;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: absolute;
+  width: 90%; 
+  max-width: 600px; 
+  text-align: center;
+  align-items: center;
+  justify-content: center; 
+  top:0;
+  display: flexbox;
+}
+.logo {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+}
+
+.logo img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  position: relative;
+  z-index: 2;
+  display: flexbox;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.overlay-text h1 {
+  color: var(--White); 
+  font-size: 2.5rem; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text p {
+  color: var(--White); 
+  font-size: 1.25rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-squiggly {
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  z-index: 2; 
+}
+
+.bottom-squiggly {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: auto;
+}
+
+.form-container {
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  margin-top: 100px;
+  display: flexbox;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flexbox;
+  flex-direction: column;
+}
+
+.form p {
+  color: var(--White);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--Navy);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="file"] {
+  width: 100%;
+  padding: 10px; 
+  margin-bottom: 15px;
+  border: 1px solid var(--Gray); 
+  background-color: var(--Navy);
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 40px;
+  color: var(--White);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background-color: var(--Orange);
+  color: var(--Navy);
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 8px; 
+  height: 40px;
+  width: 100%; 
+  font-size: 1em;
+  font-weight: 600;
+  border: none; 
+  margin-top: 10px; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-container {
+  border: 2px dashed var(--Gray); 
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px; 
+  height: 120px;
+  width: 100%; 
+  margin-bottom: 30px; 
+  box-sizing: border-box; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#drag-drop-area.dragover {
+  background-color: #e9ecef;
+}
+
+#ticket{
+  border-radius: 8px;
+  max-height: 280px;
+  height: auto;
+  width: auto;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  display: flexbox;
+}
+#avatar-image{
+  max-width: 60px;
+  height: 60px;
+  width: auto;
+  border-radius: 20%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+#github-ticket{
+  color: var(--Gray); 
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  bottom: 10%;
+  left: 23%;
+}
+#nome-ticket-2{
+  color: var(--White); 
+  font-weight: 400;
+  font-size: auto;
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+}
+#github-icon{
+  position: absolute;
+  bottom: 8%;
+  left: 18%;
+}
+#data-e-local{
+  color: var(--Gray); 
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+}
+#upload-restriction{
+  color: var(--Gray); 
+  font-size: 0.75rem;
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  top: 33%;
+  left: 10%;
+}
+#upload-restriction img{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+#error-email{
+  color: var(--Orange); 
+  font-size: 13px;
+  font-family: "Inconsolata", monospace;
+}
+#upload-icon{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+#ticket-code{
+  color: var(--Gray); 
+  font-weight: 400;
+  font-size: 2em;
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  transform: rotate(90deg);
+  top: 41%;
+  right: 0;
+}
+@media (max-width: 480px) {
+  .overlay-text h1 {
+      font-size: 1.5rem; 
+  }
+
+  .overlay-text p {
+      font-size: 0.875rem; 
+  }
+
+  .form-container {
+      padding: 0.5rem; 
+  }
+    body {
+      background-image: url("./assets/images/background-mobile.png");
+      background-size: cover, cover;
+      background-position: center, center;
+      background-repeat: no-repeat;
+  }
+  #ticket-conf{
+    color: var(--White); 
+    font-weight: 600;
+    font-size: 10px;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+  #avatar-image{
+    max-width: 30px;
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+  }
+  #ticket-code{
+    color: var(--Gray); 
+    font-weight: 400;
+    font-size: 1em;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 41%;
+    right: 3%;
+  }
+  #github-icon{
+    position: absolute;
+    bottom: 18%;
+    left: 18%;
+    width: 5px;
+    height: 5px;
+  }
+  #github-ticket{
+    color: var(--Gray); 
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    bottom: 8%;
+    left: 25%;
+  }
+  .container {
+    position: absolute;
+    width: 90%; 
+    max-width: 600px; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    display: flexbox;
+  }
+  #upload-restriction{
+    color: var(--Gray); 
+    font-size: 0.6rem;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    top: 33%;
+    left: 10%;
+  }
+}
+@media (min-width:481px) and( max-width:768px) {
+  .h1 {
+    font-size: 1.5rem; 
+  }
+
+  .p {
+      font-size: 0.875rem; 
+  }
+
+  .form-container {
+      padding: 0.5rem; 
+  }
+  body {
+    background-image: url("./assets/images/background-tablet.png");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat;
+  }
+  #ticket-conf{
+    color: var(--White); 
+    font-weight: 600;
+    font-size: 10px;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+  #avatar-image{
+    max-width: 30px;
+    height: 30px;
+    width: auto;
+    border-radius: 20%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+  }
+  #ticket-code{
+    color: var(--Gray); 
+    font-weight: 400;
+    font-size: 1em;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 41%;
+    right: 3%;
+  }
+  #github-icon{
+    position: absolute;
+    bottom: 18%;
+    left: 18%;
+    width: 5px;
+    height: 5px;
+  }
+  #github-ticket{
+    color: var(--Gray); 
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    bottom: 8%;
+    left: 25%;
+  }
+  .container {
+    position: absolute;
+    width: 90%; 
+    max-width: 600px; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    display: flexbox;
+  }
+  #upload-restriction{
+    color: var(--Gray); 
+    font-size: 0.6rem;
+    font-family: "Inconsolata", monospace;
+    position: absolute;
+    top: 33%;
+    left: 10%;
+  }
+}
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+#ticket-conf{
+  color: var(--White); 
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}

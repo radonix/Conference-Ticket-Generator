@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Conference Ticket Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo-full.svg" alt="Conference Logo" />
+      </div>
+      <br>
+      <div class="overlay-text">
+        <h1 style="margin-bottom: 0;">Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p style="margin-top: 0;">Secure your spot at next year's biggest coding conference</p>
+      </div>
+    </div>
+
+    <div class="top-squiggly">
+      <img
+        src="assets/images/pattern-squiggly-line-top.svg"
+        alt="Top squiggly line pattern"
+        style="width: 100%; max-width: 600px; height: auto"
+      />
+    </div>
+    <div class="bottom-squiggly">
+      <img
+        src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
+        alt="Bottom squiggly line pattern"
+        style="width: 100%; max-width: 600px; height: auto"
+      />
+    </div>
+    <div class="form-container">
+      <form action="ticket.html" class="form">
+        <label for="file-input">
+          <p class="form p">Upload Avatar</p>
+        </label>
+        <div id="drag-drop-area" class="file-upload-container">
+          <img
+            id="upload-icon"
+            src="assets/images/icon-upload.svg"
+            alt="Upload icon"
+          />
+          <p style="color: var(--Gray)">
+            Drag and drop files or click to upload
+          </p>
+          <input
+            type="file"
+            id="file-input"
+            style="display: none"
+            multiple
+          />
+          <div id="file-input-display"></div>
+        </div>
+        <span id="upload-restriction">
+          <img src="assets/images/icon-info.svg" alt="Info icon" />
+          Upload your photo (JPG or PNG) max size 500KB
+        </span>
+        <label for="full-name">
+          <p class="form p">Full Name</p>
+        </label>
+        <input type="text" id="full-name" name="full-name" required />
+        <label for="email">
+          <p class="form p">Email Address</p>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+          required
+        />
+        <span id="error-email"></span>
+        <label for="github">
+          <p class="form p">Github Username</p>
+        </label>
+        <input
+          type="text"
+          id="github"
+          name="github"
+          placeholder="@yourusername"
+          required
+        />
+        <button id="update-button" type="submit" class="button">
+          Generate My Ticket
+        </button>
+      </form>
+    </div>
+    <script src="main.js">
+      const avatarImageSrc = localStorage.getItem("avatarImage");
+      if (avatarImageSrc) {
+      document.getElementById("avatar-image").src = avatarImageSrc;
+      }
+    </script>
+  </body>
+</html>

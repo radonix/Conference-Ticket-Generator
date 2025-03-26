@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Conference Ticket Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo-full.svg" alt="Conference Logo" />
+      </div>
+      <div class="overlay-text">
+        <br><h1 style="margin-bottom: 0;margin-top: 0;"">
+          Congrats,
+          <span
+            id="nome-ticket"
+            class="h1"
+            style="
+              background: linear-gradient(
+                to right,
+                hsl(7, 86%, 67%),
+                hsl(0, 0%, 100%)
+              );
+              color: transparent;
+              background-clip: text;
+            "
+          ></span
+          >! <br />
+          Your ticket is ready.
+        </h1>
+        <p>
+          We've emailed your ticket to
+          <span
+            id="email-ticket"
+            class="p"
+            style="color: hsl(7, 71%, 60%)"
+          ></span>
+          and will send updates in the run up to the event.
+        </p>
+      </div>
+    </div>
+    <div id="ticket" style="max-width: 100%; position: absolute">
+      <div>
+        <img
+          src="assets/images/pattern-ticket.svg"
+          alt="Ticket"
+          style="max-width: 100%"
+        />
+          <img
+            src="assets/images/logo-mark.svg"
+            style="position: absolute; top: 3%; left: 3%"
+            alt="Logo"
+          />
+          <span id="ticket-conf">Coding Conf</span>
+          <span id="data-e-local">Jan 31, 2025 / Austin, TX</span>
+        <img
+          id="avatar-image"
+          src="assets/images/image-avatar.jpg"
+          alt="Avatar"
+        />
+
+        <span id="nome-ticket-2"></span>
+        <span id="github-icon"
+          ><img src="assets/images/icon-github.svg"
+        /></span>
+        <span id="github-ticket"></span>
+        <div id="ticket-code">#01609</div>
+      </div>
+    </div>
+
+    <div class="top-squiggly">
+      <img
+        src="assets/images/pattern-squiggly-line-top.svg"
+        alt="Top squiggly line pattern"
+        style="width: 100%; max-width: 600px; height: auto"
+      />
+    </div>
+    <div class="bottom-squiggly">
+      <img
+        src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
+        alt="Bottom squiggly line pattern"
+        style="width: 100%; max-width: 600px; height: auto"
+      />
+    </div>
+    <script>
+      document.getElementById("nome-ticket").textContent =
+        localStorage.getItem("fullName");
+      document.getElementById("nome-ticket-2").textContent =
+        localStorage.getItem("fullName");
+      document.getElementById("email-ticket").textContent =
+        localStorage.getItem("email");
+      document.getElementById("github-ticket").textContent =
+        localStorage.getItem("github");
+      const avatarImageSrc = localStorage.getItem("avatarImage");
+      if (avatarImageSrc) {
+        document.getElementById("avatar-image").src = avatarImageSrc;
+      }
+    </script>
+  </body>
+</html>
