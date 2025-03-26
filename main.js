@@ -1,10 +1,10 @@
 const dragDropArea = document.getElementById('drag-drop-area');
-const fileInputDD = document.getElementById('file-input');
-const fileNameDisplayDD = document.getElementById('file-input-display');
+const fileInput = document.getElementById('file-input');
+const fileNameDisplay = document.getElementById('file-input-display');
 const updateButton = document.getElementById('update-button');
 updateButton.addEventListener('click', updateTicketInfo);
 
-dragDropArea.addEventListener('click', () => fileInputDD.click());
+dragDropArea.addEventListener('click', () => fileInput.click());
 
 dragDropArea.addEventListener('dragover', (e) => {
     e.preventDefault(); 
@@ -27,32 +27,32 @@ dragDropArea.addEventListener('drop', (e) => {
     dragDropArea.classList.remove('dragover');
     const files = e.dataTransfer.files;
     if (files.length > 0  && files[0].size <= 500 * 1024) {
-        fileInputDD.files = files;
-        fileNameDisplayDD.textContent = `File selected`;
-        fileNameDisplayDD.style.color = 'white'; 
+        fileInput.files = files;
+        fileNameDisplay.textContent = `File selected`;
+        fileNameDisplay.style.color = 'white'; 
         document.getElementById("upload-restriction").innerHTML = "";
         handleFileSelect(files[0]);
         document.getElementById("upload-icon").src = localStorage.getItem('avatarImage');
     } else {
         document.getElementById("upload-restriction").innerHTML = "File too large. Please select a photo under 500KB. ";
         document.getElementById("upload-restriction").style.color ="hsl(7, 88%, 67%)" ;
-        fileNameDisplayDD.textContent = '';
-        fileInputDD.value = ''; 
+        fileNameDisplay.textContent = '';
+        fileInput.value = ''; 
     }
 });
-fileInputDD.addEventListener('change', () => {
-    const files = fileInputDD.files;
+fileInput.addEventListener('change', () => {
+    const files = fileInput.files;
     if (files.length > 0 && files[0].size <= 500 * 1024) {
-        fileNameDisplayDD.textContent = `File selected`;
-        fileNameDisplayDD.style.color = 'white'; 
+        fileNameDisplay.textContent = `File selected`;
+        fileNameDisplay.style.color = 'white'; 
         document.getElementById("upload-restriction").innerHTML = "";
         handleFileSelect(files[0]);
         document.getElementById("upload-icon").src = localStorage.getItem('avatarImage');
     } else {
         document.getElementById("upload-restriction").innerHTML = "File too large. Please select a photo under 500KB. ";
         document.getElementById("upload-restriction").style.color ="hsl(7, 88%, 67%)" ;
-        fileNameDisplayDD.textContent = '';
-        fileInputDD.value = ''; 
+        fileNameDisplay.textContent = '';
+        fileInput.value = ''; 
     }
 });
 function isValidEmail(email) {
